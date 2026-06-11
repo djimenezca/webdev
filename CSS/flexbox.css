@@ -1,0 +1,38 @@
+/*
+selector{
+ propiedad: valor;
+ otra-propiedad: valor;
+}
+ */
+
+.caja {
+    width: 75px;
+    height: 75px;
+    border: 4px solid #000;
+}
+
+
+#contenedor{
+    border: 2px solid #000;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    /* Cambiar la alineacion, por defecto row */
+    justify-content: space-around; /* Eje horizontal (principal) */
+}
+
+.verde{
+    background-color: #9fff67;
+}
+
+.azul{
+    background-color: #5f84ff;
+}
+
+.rojo{
+    background-color: #ff5757;
+}
+
+.amarillo{
+    background-color: #fffd79;
+}
