@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etiquetas de divisiones lógicas</title>
+    
+    <!-- ESTILOS EMBEBIDOS -->
+    <style>
+      /* Reset para márgenes y paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+        background: #f5f7fb;
+        color: #1e2a3e;
+        line-height: 1.6;
+        padding: 2rem 1rem;
+      }
+
+      
+      /* Estilos para encabezados */
+      h1 {
+        font-size: 2.2rem;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        border-left: 5px solid #2a5298;
+        padding-left: 1rem;
+        margin: 1.5rem 0 1rem;
+        color: #0f2b3d;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin: 1.2rem 0 0.6rem;
+        color: #2c3e66;
+      }
+
+      /* Header principal */
+      header {
+        background: white;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        color: #2c5282;
+        margin-top: 0.5rem;
+      }
+
+      /* Secciones generales */
+      section {
+        background: white;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        margin-bottom: 2rem;
+        transition: box-shadow 0.2s;
+      }
+
+      section:hover {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      }
+
+      /* Código (ejemplos de etiquetas) */
+      code, div code, p code {
+        background: #eef2f7;
+        font-family: 'Fira Code', 'Cascadia Code', monospace;
+        padding: 0.2rem 0.4rem;
+        border-radius: 8px;
+        font-size: 0.9em;
+        color: #c44536;
+      }
+
+      /* Divs de ejemplo (mala práctica) */
+      #encabezado, #menu, #contenido, #pie {
+        background: #fff1e0;
+        border-left: 4px solid #e67e22;
+        padding: 0.5rem 1rem;
+        margin: 0.8rem 0;
+        font-family: monospace;
+        font-size: 0.9rem;
+      }
+
+      /* Navegación dentro del header semántico */
+      nav {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #2a5298;
+        font-weight: 500;
+        padding: 0.3rem 0.8rem;
+        border-radius: 30px;
+      }
+
+      nav a:hover {
+        background: #eef2ff;
+      }
+
+      main {
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      article, aside {
+        background: #fef9e6;
+        padding: 1.2rem;
+        border-radius: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      aside {
+        background: #eaf4f5;
+      }
+
+      footer {
+        background: #1e2a3e;
+        color: #cbd5e0;
+        padding: 1.2rem;
+        text-align: center;
+        border-radius: 1rem;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      footer p {
+        margin: 0.2rem 0;
+      }
+
+      /* listas dentro de aside */
+      aside ul {
+        padding-left: 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      hr {
+        margin: 1rem 0;
+        border: none;
+        height: 1px;
+        background: #ddd;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        body {
+          padding: 1rem;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        section, header {
+          padding: 1rem;
+        }
+        nav {
+          gap: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  
+  <!-- EJEMPLO DE ESTILO INLINE: en el body agregamos un fondo y tipografía base -->
+  <body style="background: #f0f4f8; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+    
+    <header>
+      <h1>Etiquetas de divisiones lógicas</h1>
+      <p>
+        Elementos de HTML que permiten organizar el contenido de una página
+        según su significado y función, en lugar de hacerlo únicamente por
+        apariencia visual.
+      </p>
+    </header>
+    
+    <section>
+      <h2>
+        Error: Construir toda la página con
+        <div></div>
+      </h2>
+      <h3>Ejemplo (mala práctica)</h3>
+      <!-- Estilo inline en cada div para diferenciarlos ligeramente -->
+      <div id="encabezado" style="background: #ffe6d5; border-left-color: #d35400;">
+        <h1>Mi sitio</h1>
+      </div>
+
+      <div id="menu" style="background: #ffe6d5; border-left-color: #d35400;">...</div>
+
+      <div id="contenido" style="background: #ffe6d5; border-left-color: #d35400;">...</div>
+
+      <div id="pie" style="background: #ffe6d5; border-left-color: #d35400;">...</div>
+
+      <!-- Funciona pero el navegador no sabe qué representa cada sección.-->
+    </section>
+
+    <section>
+      <h2>Etiquetas semánticas o divisiones lógicas</h2>
+      <p>
+        HTML5 introdujo etiquetas que describen claramente el propósito de cada
+        área.
+      </p>
+
+      <h3>Ejemplo</h3>
+
+      <!-- Estilo inline al header interno para mostrar combinación -->
+      <header style="background: #ffffff; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 1.2rem;">
+        <h1>Mi sitio</h1>
+
+        <nav aria-label="Navegación principal">
+          <a href="/">Inicio</a>
+          <a href="/blog">Blog</a>
+          <a href="/contacto">Contacto</a>
+        </nav>
+      </header>
+
+      <main>
+        <section>
+          <h2>Servicios</h2>
+
+          <p>Desarrollo Web</p>
+          <p>Diseño UX</p>
+        </section>
+
+        <article>
+          <h2>¿Qué es HTML?</h2>
+
+          <p>HTML es el lenguaje estándar de la web...</p>
+        </article>
+
+        <aside>
+          <h2>Recursos relacionados</h2>
+
+          <ul>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </aside>
+      </main>
+
+      <footer>
+        <p>© 2026 Mi sitio</p>
+      </footer>
+    </section>
+  </body>
+</html>
