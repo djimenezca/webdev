@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Esports - Sitio Oficial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <details>
+        1- ¿Qué recomendaciones de la IA considera útiles y por qué? <br>
+            A. Utilizar el atributo Scope para lograr que en una tabla se relacionen explicitamente los datos que pertenecen
+            a las columnas y que de esta forma no no sean confusas para el usuario o programador. <br>
+            B. Obtimizar la descripcion alternativa, esto para que sea mas facil identificar el por que de las imagenes y que 
+            sus descripciones sean acorde a lo que se desea plasmar en la imagen. <br>
+            <br>
+        2. ¿Qué recomendaciones no aplicarían y por qué? <br>
+            Utilizar la etiqueta articule en vez de section. Esta etiqueta no forma parte de la rubrica y no se requiere en el
+            ejercicio. <br>
+            <br>
+        3. ¿La IA identificó correctamente las fortalezas y debilidades de su código? <br>
+            La IA logro identificar ciertas areas de mejora en mi codigo, la recomendacion del scope y la obtimizacion de las 
+            descripciones son claros ejemplos de ello, pero cometio el error de solicitar cambios de etiquetas que no son
+            parte de la rubrica. <br>
+        <hr>
+        Cambios realizados gracias a las sugerencias de la IA: <br>
+        Correccion de un error en la etiqueta main, se cambio el id al section para que el nav funcione correctamente. <br>
+        Agregar el atributo scope en la tabla para asociar las columnas respectivamente. Esto para mejorar la experiencia de 
+        usuario y programador.<br>
+        Obtimizacion de la descripcion alternativa. Un cambio importante para poder identificar el uso de estas imagenes y de 
+        esta forma si se desean cambiar o agregar mas se conozca cual es el fin de dichas imagenes. <br>
+        <hr>
+        Verificacion de criterios: <br>
+        <br>
+        Estructura obligatoria: <br>
+        Header: Correctamente utilizado. <br>
+        nav: Se realizo un menu de 4 enlaces internos (anclas). <br>
+        Main: Almacena todas las secciones tematicas como se solicita. <br>
+        Footer: Se utilizo para colocar la informacion de contacto requerida. <br>
+        <br>
+        Contenido obligatorio: <br>
+        Tabla: Se utilizaron 4 columnas y 5 filas de datos con sus respectivas etiquetas de thead y tbody. <br>
+        Lista ordenada: Se utilizaron tanto listas desordenadas (ul) como listas desordenadas (ol) ambas con al menos 4 elementos. <br>
+        Imagenes: Se colocaron 2 imagenes coherentes con el tema y con su alt descriptivo mejorado por la IA. <br>
+        Elemento multimedia: Se agrego un video con sus respectivos controles y se verifico su funcion. <br>
+        Iconos: Se agregaron mas de 3 iconos visuales decorativos en los titutlos y partes que lo requerian en la pagina. <br>
+        <hr>
+        Validacion: <br>
+        Se verifico que tanto los videos, imagenes y la pagina web funcionaran en diferentes navegadores como Chrome, Firefox, edge y hasta
+        opera GX. Todos los enlaces funcionan tanto con click como con el tabulador.<br>
+        <br>
+
+
+
+    </details>
+    <br>
+    <header>
+        <img src="../Practicas/Logo Oficial (3).png" alt="Logo de Fusion Esports" width="150">
+        <h1>Fusion Esports</h1>
+        <p>Organización profesional de deportes electrónicos dedicada a la competencia de alto nivel y el desarrollo de
+            talento regional.</p>
+    </header>
+
+    <hr>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#rosters">Nuestros Rosters</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <hr>
+
+    <main>
+        <section id="inicio"><!--el atributo id se utiliza para identificar cada seccion dentro del menu de navegacion y moverse
+        a esa seccion cuando se clickea-->
+            <h2><i class="fa-solid fa-people-group" aria-hidden="true"></i> Sobre Nosotros</h2>
+            <p>En Fusion Esports nos apasiona la competencia extrema. Desde nuestra fundación, nos hemos enfocado en
+                reclutar a los mejores jugadores de la escena para dominar los torneos más importantes de la región,
+                manteniendo siempre un estándar de excelencia, disciplina y trabajo en equipo.</p>
+            <p>Actualmente contamos con una infraestructura sólida que apoya a nuestros atletas en su día a día,
+                asegurando que tengan las herramientas necesarias para brillar en cada partida y llevar los colores de
+                Fusion a lo más alto del podio.</p>
+        </section>
+
+        <br>
+        <section id="rosters">
+            <h2><i class="fa-solid fa-trophy" aria-hidden="true"></i> Nuestras Divisiones Competitivas</h2>
+            <p>Competimos en los videojuegos más populares e importantes del ecosistema de los esports a nivel mundial.
+            </p>
+
+            <h3><i class="fa-solid fa-headset" aria-hidden="true"></i> Juegos Activos</h3>
+            <ul>
+                <li>Valorant</li>
+                <li>League of Legends (LoL)</li>
+                <li>EA Sports FC 26</li>
+                <li>Counter-Strike 2</li>
+                <li>Super Smash Bros</li>
+            </ul>
+
+            <h3><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Información de los Rosters Principales</h3>
+            <table border="1"> <!--Atributo border define el grueso del borde de la tabla-->
+                <thead>
+                    <tr> 
+                        <th scope="col">Disciplina</th> <!--Etiqueta th, se utiliza para crear la celda de encabezado de la tabla-->
+                        <th scope="col">Roster / Categoría</th> <!--Sugerencia de IA, utilizar el atributo scope para asociar explicitamente las columnas-->
+                        <th scope="col">Región de Competencia</th>
+                        <th scope="col">Estado de Temporada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Valorant</td> <!--Etiqueta td se utiliza para cear la celda de datos de la tabla-->
+                        <td>Principal Masculino</td>
+                        <td>LATAM Norte</td>
+                        <td>En Competencia</td>
+                    </tr>
+                    <tr>
+                        <td>League of Legends</td>
+                        <td>Escuadra Pro</td>
+                        <td>Latinoamérica</td>
+                        <td>Fase de Grupos</td>
+                    </tr>
+                    <tr>
+                        <td>EA Sports FC 26</td>
+                        <td>Individual / Duos</td>
+                        <td>Global / Regional</td>
+                        <td>Clasificados</td>
+                    </tr>
+                    <tr>
+                        <td>Super Smash Bros</td>
+                        <td>Individual</td>
+                        <td>Global/Regional</td>
+                        <td>En Competencia</td>
+                    </tr>
+                    <tr>
+                        <td>Counter Strike 2</td>
+                        <td>Ecuadra Pro</td>
+                        <td>Global/Regional</td>
+                        <td>Clasificados</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+        <section id="objetivos">
+            <h2><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objetivos del Equipo</h2>
+            <ol>
+                <li>Clasificar a los torneos internacionales de Valorant de este año.</li>
+                <li>Mantener el liderazgo en la liga regional de League of Legends.</li>
+                <li>Expandir la comunidad de aficionados mediante contenido exclusivo.</li>
+                <li>Dar oportunidades a nuevos talentos en desarrollo o hacer crecer aun mas a los conocidos.</li>
+            </ol>
+            <h3><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Alineacion oficial de los integrantes del equipo
+                principal de Valorant</h3>
+            <img src="../Practicas/image.png" alt="Roster principal" width="500">
+            <h3><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Estadio donde se realizaran las
+                proximas competencias regionales</h3>
+            <img src="../Practicas/photo-1542751371-adc38448a05e.avif" alt="Arena de Esports de fondo" width="500">
+            <h3><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Conoce a uno de nuestros jugadores</h3>
+            <video controls width="360" height="640">
+                <source src="../Practicas/entrevista aproto vs chivas Revision 1 (1).mp4" type="video/mp4">
+                Tu navegador no soporta este video.
+            </video>
+        </section>
+    </main>
+
+    <hr>
+    <footer id="contacto">
+        <h3><i class="fa-solid fa-address-card" aria-hidden="true"></i> Contacto y Redes Sociales</h3>
+        <p>¿Quieres formar parte de la fusión? Escríbenos para activaciones de marca, patrocinios o consultas de prensa.
+        </p>
+        <p>Correo electrónico: contacto@fusionesports.com</p>
+
+        <p>Conectados a la red: <i class="fa-solid fa-gamepad" aria-hidden="true"></i></p>
+
+        <p>&copy; 2026 Fusion Esports. Todos los derechos reservados.</p>
+        <p>2026, DJorkaeff Jimenez Carballo</p>
+        <!--&copy es un HTML entity, en este caso muestra el simbolo de copyright "©"-->
+    </footer>
+
+</body>
+
+</html>
