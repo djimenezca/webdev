@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header> 
+        <h1>Uso de etiquetas HTML</h1> <!--Encabezado h1, solo este deberia estar en el header h2 hasta h6
+        son tamaños mas pequeños que van reduciendo segun el numero-->       
+
+        <h1>Otro H1 como ejemplo</h1> <!--H1 se utiliza en el header como titulos, son mas grandes por eso mismo-->
+        <p>Etiquetas en HTML: Las tags, o etiquetas son codigos utilizados para dar intrucciones
+            al navegador sobre como debe mostrar ese elemento </p> <!--P se utiliza para parrafos-->
+    </header>
+    <main> 
+        <h2>Encabezado de nivel 2</h2>
+        <p>Ejemplo del uso jerarquico de etiquetas para encabezados</p>
+        <h2>Segundo encabezado de nivel 2</h2>
+        <h3>Primer encavezado de nivel 3</h3>
+        <p>main: Contenido principal unico (equivalente al contenido central de un libro)</p>
+
+        <h2>Tercer encabezado de nivel 2</h2>
+        <!--Solo puede haber un h3 si ya existe un h2, pero siempre se puede devolver a un h1 mientras ya existan-->
+
+        <p>Pasatiempos</p>
+        <ul>
+            <li>Leer</li> <!--Primer item de la lista-->
+            <li>Jugar</li>
+                <ul>
+                    <li>Lista anidada</li>
+                    <li>Se agrega otro ul u ol para crearla</li>
+                </ul>
+            <li>Dibujar</li>
+            <li>Correr</li>
+                
+
+        </ul> <!--UL se utiliza para crear listas desordenadas-->
+
+        <p>Otros Pasatiempos</p>
+        <ol type="a"> <!--Type es un atributo para definir el tipo de lista ordenada-->
+            <li>Hacer ejercicio</li> <!--Primer item de la lista-->
+            <li>Ver anime</li>
+            <ol type="1" start="2"> <!--Start define donde inicia la lista-->
+                <li>Pasa lo mismo con OL</li>
+                <li>Naruto</li>
+                <li>Attack on titan</li>
+                <li>Frieren</li>
+            </ol>
+            <li>Programar</li>
+            <li>Juegos de mesa</li>
+                
+
+        </ol> <!--OL se utiliza para crear listas ordenadas-->
+
+        <p>Cosas que ver y sus calificaciones</p>
+        <ol>
+            <li>Series</li>
+                <ul>
+                    <li>Braking Bad 10/10</li>
+                    <li>Peaky Blinders 8/10</li>
+                </ul>
+                
+            <li>Anime</li>
+                <ul>
+                    <li>Frieren 10/10</li>
+                    <li>Attack on titan 10/10</li>                        
+                </ul>
+            <li>Peliculas</li>
+                <ul>
+                    <li>Gigantes de acero 10/10</li>
+                    <li>Interestelar 10/10</li>
+                </ul>
+        </ol>
+
+        <img src="webdev\Assets\image.png" alt=""> <!--alt se utiliza para agregar informacion, si es decorativa no lleva nada-->
+        <img src="webdev\Assets\image.png" alt="Areas academicas: Seguridad, Procesos y calidad del software">
+        <!--
+        Dentro del atributo alt se colocan las descripciones de la imagen cuando son necesarias
+        Ruta de acceso: E:\Cenfotec\Diseño y programacion web\webdev\Assets\image.png depende de mi PC
+        Ruta relativa:  webdev\Assets\image.png No depende de la PC, siempre usar esta
+        -->
+    </main> <!--Contenido principal de la pagina se coloca en el main-->
+
+</body>
+</html>
