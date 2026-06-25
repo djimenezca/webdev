@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="registro-usuario.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Registro de usuario</h1>
+            <p>Complete todos los campos obligatorios para crear su cuenta</p>
+        </header>
+
+        <form action="" novalidate>
+            <div>
+                <label for="nombre-usuario">Nombre Completo</label>
+                <span aria-hidden="true">*</span>
+
+                <div>
+                    <input type="text" id="nombre-usuario" placeholder="ej. Jorka Jimenez" required aria-required="true"
+                        aria-describedby="ayuda-nombre">
+                    <span id="ayuda-nombre" class="sr-only">Ingrese su nombre completo (Minimo 5 caracteres).</span>
+                </div>
+            </div>
+
+            <!--Correo-->
+            <div>
+                <label for="correo">Digite su correo electronico</label>
+                <span aria-hidden="true">*</span>
+
+                <div>
+                    <input type="email" id="correo" placeholder="ej. usuario@dominio.com" required aria-required="true"
+                        aria-describedby="ayuda-correo">
+                    <span id="ayuda-correo" class="sr-only">Ingrese un correo valido (ej. usuario@dominio.com).</span>
+                </div>
+            </div>
+
+            <!--Contraseña-->
+            <div>
+                <label for="contraseña">Digite su contraseña (minimo 8 caracteres)</label>
+                <span aria-hidden="true">*</span>
+
+                <div>
+                    <input type="password" id="contraseña" placeholder="ej. !Fill18640" required aria-required="true"
+                        aria-describedby="ayuda-contraseña">
+                    <span id="ayuda-contraseña" class="sr-only">Ingrese una contraseña valida (ej. !Fill18640).</span>
+                </div>
+            </div>
+            <!--Verificacion de contraseña-->
+            <div>
+                <label for="verif-contraseña">Verifique su contraseña</label>
+                <span aria-hidden="true">*</span>
+
+                <div>
+                    <input type="password" id="verif-contraseña" placeholder="ej. !Fill18640" required aria-required="true"
+                        aria-describedby="ayuda-contraseña">
+                    <span id="ayuda-contraseña" class="sr-only">Verifique su contraseña digitada anteriormente.</span>
+                </div>
+            </div>
+
+            <button>Crear cuenta</button>
+
+        </form>
+    </main>
+
+</body>
+
+</html>
