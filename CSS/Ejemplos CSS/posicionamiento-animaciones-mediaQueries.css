@@ -1,0 +1,180 @@
+:root {
+    --azul: #164a98;
+    --celeste: #9cc8ff;
+    --naranja: #f05323;
+    --fuscia: #c81f66;
+    --rojo: #d2232a;
+    --verde: #4aa147;
+    --verdeOscuro: #00734a;
+    --ceslesteOscuro: #2b93d1;
+    --amarillo: #fff200;
+    --amarilloOscuro: #ffc63e;
+    --morado: #712c86;
+    --turquesa: #00928d;
+    --grisOscuro: #7c7b75;
+    --gris: #d2d2d2;
+    --borde-radio: 8px;
+    --negro: #1e1d1d;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+.posicion-estatica {
+    position: static;
+    left: 50px;
+    top: 20px;
+}
+
+.posicion-relativa {
+    position: relative;
+    left: 50px;
+    /* se mueve 20px a la derecha desde donde debería estar */
+    top: 20px;
+}
+
+.posicion-absoluta {
+    position: absolute;
+    top: 350px;
+    /* Inicia a partir del pixel 400 Sale del flujo normal: Muy usado en menús y overlays*/
+    left: 550px;
+}
+
+.posicion-fija {
+    position: fixed;
+    /*Ejemplo: Botón de contacto, Menú flotante */
+    bottom: 0;
+    right: 0;
+}
+
+.posicion-relativa-fija {
+    position: sticky;
+    top: 0;
+}
+
+/* 
+-------------------------
+|        Margin         |
+|  ------------------   |
+|  |    Border      |   |
+|  |  ------------  |   |
+|  |  | Padding  |  |   |
+|  |  | Content  |  |   |
+|  |  ------------  |   |
+|  ------------------   |
+-------------------------
+*/
+.caja {
+    width: 200px;
+    padding: 20px;
+    /* espacio interno */
+    border: 2px solid black;
+    margin: 30px;
+    /* espacio externo */
+    /* Ancho total real = 200 + 40 (padding l/r) + 4 (border) = 244px */
+
+    /* Esto es importante porque */
+}
+
+.cajita {
+    width: 75px;
+    height: 75px;
+    border: 4px solid #000;
+}
+
+#contenedor {
+    border: 2px solid #000;
+    height: 450px;
+    display: flex;
+    /* flex-direction: row;  Cambiar el eje principal, por defecto row */
+
+    /* justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe; */
+    justify-content: space-around;
+    /* Eje horizontal */
+
+    align-items: center;
+    /*Eje vertical */
+
+}
+
+.verde {
+    background-color: rgb(73, 216, 149);
+}
+
+.rosado {
+    background-color: #cf6a87;
+}
+
+.azul {
+    background-color: #546de5;
+}
+
+.morado {
+    background-color: #786fa6;
+}
+
+.animacion-boton {
+    background: rgb(171, 171, 243);
+    transition: 0.5s;
+}
+
+.animacion-boton:hover {
+    background: rgb(241, 170, 170);
+    text-decoration: underline;
+}
+
+.animacion-boton:focus {
+    border: 10px solid rgb(220, 143, 28);
+    text-decoration: wavy;
+}
+
+.animacion-boton:active {
+    transform: scale(0.9);
+}
+
+a{
+    font-size: medium;
+    font-weight: bold;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: red;
+}
+
+a:focus {
+    color: purple;
+}
+
+a:active {
+    color: yellow;
+}
+
+/* Media queries */
+@media(prefers-color-scheme: dark){
+    body{
+        background-color: var(--negro);
+        color: var(--gris);
+    }
+
+    a, a:visited, a:link{
+        color: yellow;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+   body{
+      background: var(--azul);
+      color: var(--gris);
+   }
+
+}

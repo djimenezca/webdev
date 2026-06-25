@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ejercicio CSS y Flexbox</title>
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/css-flexbox.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header role="banner">
+        <nav class="navbar" aria-label="Navegación principal">
+            <!-- aria-label: Atributo que permite proporcionar un nombre accesible a un elemento HTML.
+        Se recomienda cuando  no hay texto visible en la página pero se requiere que el lector de pantalla anuncie algo descriptivo -->
+            <div class="logo" aria-label="Logotipo">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                <span>Logo</span>
+            </div>
+
+            <ul class="nav-links" role="list">
+                <li><a href="#" aria-current="page">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+
+            <div class="user-icon" aria-label="Perfil de usuario">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: PERFIL -->
+    <main id="main-content" class="card-container">
+        <article class="profile-card" aria-labelledby="profile-name">
+            <!-- aria-labelledby: Atributo que permite asociar un elemento con otro que contiene su etiqueta o descripción textual.
+
+        Ejemplo:  aria-labelledby="profile-name" apunta al <h2 id="profile-name">. El lector de pantalla indicaría: "Ana García, artículo"
+        -->
+
+            <img class="avatar" src="https://randomuser.me/api/portraits/lego/5.jpg" alt="Foto de perfil de Ana García">
+
+            <h2 id="profile-name">Ana García</h2>
+            <p>Desarrolladora Frontend</p>
+
+            <div class="button-group">
+                <button class="btn primary" aria-label="Seguir a Ana García">
+                    <i class="fas fa-user-plus" aria-hidden="true"></i> Seguir
+                </button>
+                <button class="btn secondary" aria-label="Enviar mensaje a Ana García">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> Mensaje
+                </button>
+            </div>
+
+            <div class="stats" aria-label="Estadísticas del perfil">
+                <div><strong>120</strong> Seguidores</div>
+                <div><strong>85</strong> Siguiendo</div>
+                <div><strong>32</strong> Publicaciones</div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Ejercicio de CSS y Flexbox</p>
+    </footer>
+</body>
+
+</html>

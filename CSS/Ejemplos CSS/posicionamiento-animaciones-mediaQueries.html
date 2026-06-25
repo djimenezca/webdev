@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos CSS</title>
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos propios-->
+    <link rel="stylesheet" href="css/posicionamiento-animaciones-mediaQueries.css">
+
+</head>
+
+<body>
+    <h1>Ejemplos de estilo</h1>
+
+
+    <section>
+        <h2>Posicionamiento</h2>
+        <p>Cómo se colocan los elementos:</p>
+        <ul>
+            <li>static (por defecto): flujo normal.</li>
+            <li>relative: se mueve relativo a su posición normal.</li>
+            <li>absolute: relativo a su contenedor posicionado más cercano.</li>
+            <li>fixed: relativo a la ventana del navegador (no se mueve al </li>hacer scroll).
+            <li>sticky: híbrido entre relative y fixed.</li>
+        </ul>
+
+
+        <button class="posicion-estatica" title="Posicionamiento: Static (el elemento sigue el flujo normal)">
+            <i class="fas fa-code" aria-hidden="true"></i> Botón en posición static
+        </button>
+
+        <button class="posicion-relativa"
+            title="Posicionamiento: Relative (permite mover el elemento respecto a su posición original)">
+            <i class="fas fa-code" aria-hidden="true"></i> Botón en posición relative
+        </button>
+
+        <button class="posicion-absoluta"
+            title="Posicionamiento: Absolute (el elemento se posiciona respecto al contenedor padre)">
+            <i class="fas fa-code" aria-hidden="true"></i> Botón en posición absolute
+        </button>
+
+        <button class="posicion-fija" title="Posicionamiento: Fixed (permanece fijo aunque se haga scroll)">
+            <i class="fas fa-code" aria-hidden="true"></i> Botón en posición fixed
+        </button>
+    </section>
+
+    <section>
+        <h2>Modelo de cajas</h2>
+        <p>Todo elemento en CSS es una caja rectangular con: <br>margin (exterior) → border → padding (interior) → content (contenido)</p>
+
+        <p class="caja">
+            Caja con un ancho de 244px (width: 200px; + padding: 20px; (40px por 20px a la izquierda y 20px a la derecha) + border: 2px (4px por 2px a la izquierda y 20 px a la derecha)) 
+        </p>
+
+    </section>
+
+    <section>
+        <h2>Flexbox</h2>
+        <p>Sistema de posicionamiento.</p>
+
+        <div id="contenedor">
+            <div class="cajita verde"></div> <!-- div: Agrupa información -->
+            <div class="cajita rosado"></div> 
+            <div class="cajita azul"></div> 
+            <div class="cajita morado"></div> 
+        </div>
+
+
+    </section>
+
+    <section>
+        <h2>Animaciones y selectores</h2>
+        <p>Permiten cambiar estilos según acciones.</p>
+        <ul>
+            <li>Hover: Cuando el mouse pasa encima.</li>
+            <li>Focus: Cuando el elmento tiene el foco del teclado.</li>
+            <li>Active: Cuando el elemento se encuentra activo.</li>
+            <li>Link: Enlace no visiatado.</li>
+            <li>Visited: Enlace visiatado.</li>
+        </ul>
+
+        <button title="Estilos del botón" class="animacion-boton">Estilo de acuerdo a la acción</button>
+
+        <a href="https://getbootstrap.com/docs/5.3/components/buttons">Ejemplo de enlace</a>
+
+
+    </section>
+
+    <section>
+        <h2>Marcos de trabajo (Frameworks)</h2>
+        <p>Bibliotecas de CSS preescritas (Bootstrap, Tailwind CSS).</p>
+
+        <a href="https://getbootstrap.com/docs/5.3/components/buttons">Bootstrap</a>
+        
+    </section>
+
+</body>
+
+</html>
