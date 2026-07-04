@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro manual de egresados</title>
+
+    <link rel="stylesheet" href="css/estilos-generales.css">
+    <link rel="stylesheet" href="css/campos-dinamicos.css">
+
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <h1>Registro manual de egresados</h1>
+            <p class="subtitulo">Complete todos los campos obligatorios para registrar al egresado.</p>
+        </header>
+
+        <form action="" novalidate>
+
+            <!-- Identificación -->
+            <div>
+                <label for="identificacion">Identificación</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="text" id="identificacion" placeholder="ej. 123456789" required aria-required="true" aria-describedby="ayuda-identificacion">
+
+                    <span id="ayuda-identificacion" class="texto-oculto">Ingrese su número de identificación de 9 dígitos.</span>
+                </div>
+            </div>
+
+            <!-- Nombre completo -->
+            <div>
+                <label for="nombre-completo">Nombre completo de la persona egresada</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="text" id="nombre-completo" placeholder="ej. María Pérez" required aria-required="true" aria-describedby="ayuda-nombre">
+
+                    <span id="ayuda-nombre" class="texto-oculto">Ingrese su nombre completo (mínimo 3 caracteres).</span>
+                </div>
+            </div>
+
+            <!-- Correo -->
+            <div>
+                <label for="correo">Correo electrónico</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="email" id="correo" placeholder="egresado@dominio.com" required aria-required="true" aria-describedby="ayuda-correo">
+
+                    <span id="ayuda-correo" class="texto-oculto">Ingrese un correo electrónico válido.</span>
+                </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div>
+                <label for="telefono">Teléfono</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="tel" id="telefono" placeholder="ej. 88888888" required aria-required="true">
+
+                </div>
+            </div>
+
+            <!-- Fecha de registro -->
+            <div>
+                <label for="fecha-registro">Fecha de registro</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="date" id="fecha-registro" required aria-required="true" aria-describedby="ayuda-fecha">
+
+                    <span id="ayuda-fecha" class="texto-oculto">Seleccione la fecha de registro (por defecto hoy).</span>
+                </div>
+            </div>
+
+            <!-- Lugares de trabajo (grupo repetible) -->
+            <div>
+                <label>Lugares de trabajo</label>
+                <span class="label-opcional">(opcional)</span>
+
+                <div id="lugares-container">
+                    <!-- Los bloques se mediante JavaScript -->
+                </div>
+
+                <button type="button" class="agregar-lugar" id="agregar-lugar-btn">+ Agregar lugar de trabajo</button>
+            </div>
+
+            <button class="guardar-formulario" id="guardar-egresado" type="button">Registrar egresado</button>
+
+        </form>
+    </main>
+
+    <!-- Template oculto para clonar un bloque de lugar de trabajo -->
+    <template id="template-lugar">
+        <div class="bloque-lugar" data-index="0">
+            <button type="button" class="eliminar-lugar" aria-label="Eliminar este lugar de trabajo"><i class="fa-solid fa-ban" aria-hidden="true"></i></button>
+
+            <!-- Empresa -->
+            <div>
+                <label for="empresa-0">Empresa</label>
+                <div>
+                    <input type="text" id="empresa-0" placeholder="Nombre de la empresa" aria-describedby="ayuda-empresa-0">
+                    <span id="ayuda-empresa-0" class="texto-oculto">Nombre de la empresa donde trabajó.</span>
+                </div>
+            </div>
+
+            <!-- Puesto -->
+            <div>
+                <label for="puesto-0">Puesto</label>
+                <div>
+                    <input type="text" id="puesto-0" placeholder="Cargo desempeñado" aria-describedby="ayuda-puesto-0">
+                    <span id="ayuda-puesto-0" class="texto-oculto">Puesto o cargo que ocupó.</span>
+                </div>
+            </div>
+
+            <!-- Fecha inicio -->
+            <div>
+                <label for="fecha-inicio-0">Fecha inicio</label>
+                <div>
+                    <input type="date" id="fecha-inicio-0" aria-describedby="ayuda-fecha-inicio-0">
+                    <span id="ayuda-fecha-inicio-0" class="texto-oculto">Fecha de inicio en ese puesto.</span>
+                </div>
+            </div>
+
+            <!-- Fecha fin -->
+            <div>
+                <label for="fecha-fin-0">Fecha fin</label>
+                <div>
+                    <input type="date" id="fecha-fin-0" aria-describedby="ayuda-fecha-fin-0">
+                    <span id="ayuda-fecha-fin-0" class="texto-oculto">Fecha de finalización (si aplica).</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- Enlazar archivos JS con la página web 
+    Se agrega al final del body, justo antes de cerrar porque el navegador primero carga todo el HTML y construye el DOM. Cuando ejecuta el script, todos los elementos ya existen. 
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/registro-manual-egresados.js"></script>
+
+
+</body>
+
+</html>

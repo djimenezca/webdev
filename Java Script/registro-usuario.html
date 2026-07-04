@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+
+    <link rel="stylesheet" href="css/estilos-generales.css">
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <h1>Registro de usuario</h1>
+            <p class="subtitulo">Complete todos los campos obligatorios para crear su cuenta.</p>
+        </header>
+
+        <form action="" novalidate>
+            <div>
+                <label for="nombre-usuario">Nombre completo</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="text" id="nombre-usuario" placeholder="ej. María Pérez" required aria-required="true" aria-describedby="ayuda-nombre">
+
+                    <span id="ayuda-nombre" class="texto-oculto">Ingrese su nombre completo (mínimo 5 caracteres).</span>
+                </div>
+            </div>
+
+            <!-- Correo -->
+             <div>
+                <label for="correo">Correo</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="email" id="correo" placeholder="usuario@ucenfotec.ac.cr" required aria-required="true" aria-describedby="ayuda-correo">
+
+                    <span id="ayuda-correo" class="texto-oculto">Ingrese su un correo válido (ej. usuario@ucenfotec.ac.cr).</span>
+                </div>
+            </div>
+
+            <!-- Contraseña -->
+             <div>
+                <label for="contrasenna">Contraseña</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="password" id="contrasenna" required aria-required="true">
+                </div> 
+
+            </div>
+
+            <!-- Verificación de la contraseña -->
+             <div>
+                <label for="verificacion-contrasenna">Confirmar contraseña</label>
+                <span aria-hidden="true" class="label-requerido">*</span>
+
+                <div>
+                    <input type="password" id="verificacion-contrasenna" required aria-required="true" aria-describedby="ayuda-confirmacion-contrasenna">
+
+                    <span id="ayuda-confirmacion-contrasenna" class="texto-oculto">Vuelva a escribir la misma contraseña.</span>
+                </div> 
+
+            </div>
+
+            <button class="guardar-formulario">Crear cuenta</button>
+
+
+        </form>
+    </main>
+
+
+
+
+</body>
+
+</html>
