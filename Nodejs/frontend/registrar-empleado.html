@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar nuevo colaborador</title>
+</head>
+
+<body>
+    <h1>Nuevo colaborador</h1>
+    <form>
+        <div>
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" id="txtNombre" required>
+        </div>
+
+        <div>
+            <label for="txtCorreo">Correo:</label>
+            <input type="email" id="txtCorreo" required>
+        </div>
+
+        <div>
+            <label for="txtContrasenia">Contraseña:</label>
+            <input type="password" id="txtContrasenia" required>
+        </div>
+
+        <fieldset>
+            <legend>Dirección</legend>
+
+            <div>
+                <label for="txtProvincia">Provincia:</label>
+                <input type="text" id="txtProvincia" required>
+            </div>
+            <div>
+                <label for="txtCanton">Cantón:</label>
+                <input type="text" id="txtCanton" required>
+            </div>
+            <div>
+                <label for="txtDistrito">Distrito:</label>
+                <input type="text" id="txtDistrito" required>
+            </div>
+            <div>
+                <label for="txtUbicacion">Dirección exacta:</label>
+                <input type="text" id="txtUbicacion">
+            </div>
+        </fieldset>
+
+        <button type="button" id="btnRegistrarEmpleado"> Guardar colaborador</button>
+
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="js/registrar-empleado.js"></script>
+
+</body>
+
+</html>
