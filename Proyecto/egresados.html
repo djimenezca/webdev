@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de egresados · Portal de Egresados CENFOTEC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../Proyecto/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="sello" aria-hidden="true"><img src="../Proyecto/assets/LogoHorizontal-Color.png" alt=""></span>
+      <span class="brand-text">
+        <strong>Portal de Egresados</strong>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-principal">Menú</button>
+    <nav class="main-nav" id="nav-principal" aria-label="Navegación principal">
+      <div class="wrap">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="publica.html">Programa de egresados</a></li>
+          <li><a href="egresados.html" aria-current="page">Gestión de egresados</a></li>
+          <li><a href="titulos.html">Gestión de títulos</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="acerca.html" >Acerca de</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Folio 01</span>
+        <h1>Gestión de egresados</h1>
+        <p>Registre a una persona egresada en el archivo institucional. Los campos se
+        validan con expresiones regulares antes de guardarse en el registro.</p>
+      </div>
+
+      <div class="panel" style="margin-bottom:2.5rem;">
+        <form id="form-egresado" novalidate>
+          <fieldset>
+            <legend>Nuevo registro de egresado</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="eg-cedula">Cédula</label>
+                <input type="text" id="eg-cedula" placeholder="1-2345-6789" required>
+                <span class="hint">Formato: 1-2345-6789</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="eg-nombre">Nombre completo</label>
+                <input type="text" id="eg-nombre" placeholder="María Solís Vargas" required>
+                <span class="hint">Nombre y apellidos, solo letras</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="eg-correo">Correo electrónico</label>
+                <input type="email" id="eg-correo" placeholder="nombre@dominio.com" required>
+                <span class="hint">Correo válido</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="eg-telefono">Teléfono</label>
+                <input type="text" id="eg-telefono" placeholder="8888-1234" required>
+                <span class="hint">Formato: 8888-1234</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="eg-carrera">Carrera</label>
+                <input type="text" id="eg-carrera" placeholder="Ingeniería de Software" required>
+                <span class="hint">3 a 80 caracteres</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="eg-anio">Año de graduación</label>
+                <input type="text" id="eg-anio" placeholder="2026" required>
+                <span class="hint">Entre 1980 y 2029</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="eg-estado">Estado</label>
+                <select id="eg-estado">
+                  <option value="activo">Activo</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+                <span class="error-msg" role="alert"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Registrar egresado</button>
+            <span id="eg-status" class="form-status" role="status"></span>
+          </div>
+        </form>
+      </div>
+
+      <h2 style="font-size:1.15rem;">Registro de egresados</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Cédula</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Carrera</th>
+              <th scope="col">Año</th>
+              <th scope="col">Estado</th>
+              <th scope="col"><span class="visually-hidden">Acciones</span></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-egresados-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <small>&copy; 2026 Universidad CENFOTEC · Escuela de Ingeniería del Software</small>
+    <small>Proyecto académico — SOFT-06 Diseño y programación web</small>
+    <small>Estudiantes — DJorkaeff Jimenez Carballo y Jennifer Marin Sibaja</small>
+  </div>
+</footer>
+
+<script src="../Proyecto/js/validation.js"></script>
+<script src="../Proyecto/js/main.js"></script>
+</body>
+</html>

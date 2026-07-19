@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de títulos · Portal de Egresados CENFOTEC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../Proyecto/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="sello" aria-hidden="true"><img src="../Proyecto/assets/LogoHorizontal-Color.png" alt=""></span>
+      <span class="brand-text">
+        <strong>Portal de Egresados</strong>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-principal">Menú</button>
+    <nav class="main-nav" id="nav-principal" aria-label="Navegación principal">
+      <div class="wrap">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="publica.html">Programa de egresados</a></li>
+          <li><a href="egresados.html">Gestión de egresados</a></li>
+          <li><a href="titulos.html" aria-current="page">Gestión de títulos</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="acerca.html" >Acerca de</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Folio 02</span>
+        <h1>Gestión de títulos</h1>
+        <p>Registre un título académico y vincúlelo a la persona egresada correspondiente.
+        Todos los campos se validan antes de guardarse en el registro.</p>
+      </div>
+
+      <div class="panel" style="margin-bottom:2.5rem;">
+        <form id="form-titulo" novalidate>
+          <fieldset>
+            <legend>Nuevo registro de título</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="tit-codigo">Código de título</label>
+                <input type="text" id="tit-codigo" placeholder="LIC-2026" required>
+                <span class="hint">Formato: LIC-2026 o BSC-00458</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field full">
+                <label for="tit-nombre">Nombre del título</label>
+                <input type="text" id="tit-nombre" placeholder="Bachillerato en Ingeniería de Software" required>
+                <span class="hint">3 a 80 caracteres</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="tit-nivel">Nivel</label>
+                <select id="tit-nivel">
+                  <option value="Grado">Grado</option>
+                  <option value="Posgrado">Posgrado</option>
+                </select>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="tit-fecha">Fecha de emisión</label>
+                <input type="date" id="tit-fecha" required>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field full">
+                <label for="tit-egresado">Egresado asociado</label>
+                <select id="tit-egresado" required>
+                  <option value="">Seleccione un egresado…</option>
+                </select>
+                <span class="hint">Debe existir un registro previo en Gestión de egresados</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Registrar título</button>
+            <span id="tit-status" class="form-status" role="status"></span>
+          </div>
+        </form>
+      </div>
+
+      <h2 style="font-size:1.15rem;">Registro de títulos</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Título</th>
+              <th scope="col">Nivel</th>
+              <th scope="col">Egresado</th>
+              <th scope="col">Fecha de emisión</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-titulos-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <small>&copy; 2026 Universidad CENFOTEC · Escuela de Ingeniería del Software</small>
+    <small>Proyecto académico — SOFT-06 Diseño y programación web</small>
+    <small>Estudiantes — DJorkaeff Jimenez Carballo y Jennifer Marin Sibaja</small>
+  </div>
+</footer>
+
+<script src="../Proyecto/js/validation.js"></script>
+<script src="../Proyecto/js/main.js"></script>
+</body>
+</html>
