@@ -40,11 +40,18 @@
       <div class="section-head">
         <span class="eyebrow">Folio 01</span>
         <h1>Gestión de egresados</h1>
-        <p>Registre a una persona egresada en el archivo institucional. Los campos se
-        validan con expresiones regulares antes de guardarse en el registro.</p>
+        <p>Registre el perfil de una persona egresada. Todos los campos se validan antes
+        de guardarse en el registro local del navegador.</p>
       </div>
 
-      <div class="panel" style="margin-bottom:2.5rem;">
+      <article class="panel" aria-labelledby="info-heading" style="margin-bottom:2rem;">
+        <h2 id="info-heading" style="font-size:1rem;">Antes de registrar</h2>
+        <p style="margin-bottom:0;">Verifique que la cédula tenga el formato <strong>1-2345-6789</strong>,
+        el correo sea válido y el teléfono siga el formato <strong>8888-1234</strong>. Cada registro se
+        agrega a la lista existente en Local Storage, sin sobrescribir los datos ya guardados.</p>
+      </article>
+
+      <article class="panel" style="margin-bottom:2.5rem;">
         <form id="form-egresado" novalidate>
           <fieldset>
             <legend>Nuevo registro de egresado</legend>
@@ -55,16 +62,16 @@
                 <span class="hint">Formato: 1-2345-6789</span>
                 <span class="error-msg" role="alert"></span>
               </div>
-              <div class="field">
+              <div class="field full">
                 <label for="eg-nombre">Nombre completo</label>
-                <input type="text" id="eg-nombre" placeholder="María Solís Vargas" required>
+                <input type="text" id="eg-nombre" placeholder="Mariana Solís Vargas" required>
                 <span class="hint">Nombre y apellidos, solo letras</span>
                 <span class="error-msg" role="alert"></span>
               </div>
               <div class="field">
                 <label for="eg-correo">Correo electrónico</label>
                 <input type="email" id="eg-correo" placeholder="nombre@dominio.com" required>
-                <span class="hint">Correo válido</span>
+                <span class="hint">usuario@dominio.com</span>
                 <span class="error-msg" role="alert"></span>
               </div>
               <div class="field">
@@ -79,9 +86,9 @@
                 <span class="hint">3 a 80 caracteres</span>
                 <span class="error-msg" role="alert"></span>
               </div>
-              <div class="field">
+              <div class="field full">
                 <label for="eg-anio">Año de graduación</label>
-                <input type="text" id="eg-anio" placeholder="2026" required>
+                <input type="text" id="eg-anio" placeholder="2023" required>
                 <span class="hint">Entre 1980 y 2029</span>
                 <span class="error-msg" role="alert"></span>
               </div>
@@ -100,10 +107,11 @@
             <span id="eg-status" class="form-status" role="status"></span>
           </div>
         </form>
-      </div>
+      </article>
 
-      <h2 style="font-size:1.15rem;">Registro de egresados</h2>
-      <div class="table-wrap">
+      <article>
+        <h2 style="font-size:1.15rem;">Registro de egresados</h2>
+        <div class="table-wrap">
         <table>
           <thead>
             <tr>
@@ -112,12 +120,13 @@
               <th scope="col">Carrera</th>
               <th scope="col">Año</th>
               <th scope="col">Estado</th>
-              <th scope="col"><span class="visually-hidden">Acciones</span></th>
+              <th scope="col">Perfil</th>
             </tr>
           </thead>
           <tbody id="tabla-egresados-body"></tbody>
-        </table>
-      </div>
+          </table>
+        </div>
+      </article>
     </div>
   </section>
 </main>

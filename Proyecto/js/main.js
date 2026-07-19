@@ -40,6 +40,20 @@ const Store = {
     const arr = Store.read(key);
     arr.push(record);
     Store.write(key, arr);
+    // Requisito de la práctica: mostrar en consola la lista completa
+    // de registros almacenados, para verificar que el proceso fue correcto.
+    console.log(`Registros almacenados en "${key}" (${arr.length} en total):`);
+    console.log(JSON.parse(localStorage.getItem(key)));
+    return arr;
+  },
+  update(key, idField, idValue, record) {
+    const arr = Store.read(key).map((r) => (r[idField] === idValue ? record : r));
+    Store.write(key, arr);
+    return arr;
+  },
+  remove(key, idField, idValue) {
+    const arr = Store.read(key).filter((r) => r[idField] !== idValue);
+    Store.write(key, arr);
     return arr;
   },
   seedIfEmpty(key, seed) {
@@ -138,6 +152,42 @@ function initEgresadosPage() {
 
   if (tbody) renderEgresadosTable(tbody);
 
+  // Guarda la cédula del egresado que se está editando (null = alta nueva)
+  let egresadoEditando = null;
+  const btnSubmit = form ? form.querySelector('button[type="submit"]') : null;
+
+  // Editar y eliminar desde la tabla (delegación de eventos)
+  if (tbody) {
+    tbody.addEventListener("click", (e) => {
+      const btnEliminar = e.target.closest("[data-eliminar]");
+      const btnEditar = e.target.closest("[data-editar]");
+
+      if (btnEliminar) {
+        const cedula = decodeURIComponent(btnEliminar.getAttribute("data-eliminar"));
+        if (confirm(`¿Eliminar el egresado con cédula ${cedula}?`)) {
+          Store.remove("egresados", "cedula", cedula);
+          renderEgresadosTable(tbody);
+        }
+      }
+
+      if (btnEditar) {
+        const cedula = decodeURIComponent(btnEditar.getAttribute("data-editar"));
+        const reg = Store.read("egresados").find((r) => r.cedula === cedula);
+        if (!reg) return;
+        document.getElementById("eg-cedula").value = reg.cedula;
+        document.getElementById("eg-nombre").value = reg.nombre;
+        document.getElementById("eg-correo").value = reg.correo;
+        document.getElementById("eg-telefono").value = reg.telefono;
+        document.getElementById("eg-carrera").value = reg.carrera;
+        document.getElementById("eg-anio").value = reg.anio;
+        document.getElementById("eg-estado").value = reg.estado;
+        egresadoEditando = cedula;
+        if (btnSubmit) btnSubmit.textContent = "Guardar cambios";
+        form.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+
   if (form) {
     wireLiveValidation(specs);
     form.addEventListener("submit", (e) => {
@@ -157,12 +207,25 @@ function initEgresadosPage() {
         anio: document.getElementById("eg-anio").value.trim(),
         estado: document.getElementById("eg-estado").value,
       };
-      Store.add("egresados", record);
-      status.textContent = `Egresado ${record.nombre} registrado correctamente.`;
+
+      let registros;
+      if (egresadoEditando) {
+        registros = Store.update("egresados", "cedula", egresadoEditando, record);
+        status.textContent = `Egresado ${record.nombre} actualizado correctamente.`;
+        egresadoEditando = null;
+        if (btnSubmit) btnSubmit.textContent = "Registrar egresado";
+      } else {
+        registros = Store.add("egresados", record);
+        status.textContent = `Egresado ${record.nombre} registrado correctamente.`;
+      }
       status.className = "form-status ok";
       form.reset();
       form.querySelectorAll(".field").forEach((f) => f.classList.remove("valid", "invalid"));
       if (tbody) renderEgresadosTable(tbody);
+
+      // Verificación en consola: lista completa de registros en Local Storage
+      console.log(`Registros de egresados almacenados (${registros.length}):`);
+      console.log(registros);
     });
   }
 }
@@ -178,7 +241,11 @@ function renderEgresadosTable(tbody) {
       <td>${escapeHtml(r.carrera)}</td>
       <td>${escapeHtml(r.anio)}</td>
       <td><span class="badge ${r.estado}">${r.estado}</span></td>
-      <td><a class="btn btn-ghost btn-sm" href="perfil.html?cedula=${encodeURIComponent(r.cedula)}">Ver perfil</a></td>
+      <td class="acciones">
+        <a class="btn btn-ghost btn-sm" href="perfil.html?cedula=${encodeURIComponent(r.cedula)}">Ver</a>
+        <button type="button" class="btn btn-ghost btn-sm" data-editar="${encodeURIComponent(r.cedula)}">Editar</button>
+        <button type="button" class="btn btn-danger btn-sm" data-eliminar="${encodeURIComponent(r.cedula)}">Eliminar</button>
+      </td>
     </tr>`
     )
     .join("");
@@ -208,6 +275,40 @@ function initTitulosPage() {
 
   if (tbody) renderTitulosTable(tbody);
 
+  // Guarda el código del título que se está editando (null = alta nueva)
+  let tituloEditando = null;
+  const btnSubmit = form ? form.querySelector('button[type="submit"]') : null;
+
+  // Editar y eliminar desde la tabla (delegación de eventos)
+  if (tbody) {
+    tbody.addEventListener("click", (e) => {
+      const btnEliminar = e.target.closest("[data-eliminar]");
+      const btnEditar = e.target.closest("[data-editar]");
+
+      if (btnEliminar) {
+        const codigo = decodeURIComponent(btnEliminar.getAttribute("data-eliminar"));
+        if (confirm(`¿Eliminar el título ${codigo}?`)) {
+          Store.remove("titulos", "codigo", codigo);
+          renderTitulosTable(tbody);
+        }
+      }
+
+      if (btnEditar) {
+        const codigo = decodeURIComponent(btnEditar.getAttribute("data-editar"));
+        const reg = Store.read("titulos").find((r) => r.codigo === codigo);
+        if (!reg) return;
+        document.getElementById("tit-codigo").value = reg.codigo;
+        document.getElementById("tit-nombre").value = reg.nombre;
+        document.getElementById("tit-nivel").value = reg.tipoNivel;
+        document.getElementById("tit-egresado").value = reg.cedulaEgresado;
+        document.getElementById("tit-fecha").value = reg.fechaEmision || "";
+        tituloEditando = codigo;
+        if (btnSubmit) btnSubmit.textContent = "Guardar cambios";
+        form.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+
   if (form) {
     wireLiveValidation(specs);
     form.addEventListener("submit", (e) => {
@@ -231,8 +332,16 @@ function initTitulosPage() {
         cedulaEgresado: egresadoField.value,
         fechaEmision: document.getElementById("tit-fecha").value,
       };
-      Store.add("titulos", record);
-      status.textContent = `Título ${record.codigo} registrado correctamente.`;
+
+      if (tituloEditando) {
+        Store.update("titulos", "codigo", tituloEditando, record);
+        status.textContent = `Título ${record.codigo} actualizado correctamente.`;
+        tituloEditando = null;
+        if (btnSubmit) btnSubmit.textContent = "Registrar título";
+      } else {
+        Store.add("titulos", record);
+        status.textContent = `Título ${record.codigo} registrado correctamente.`;
+      }
       status.className = "form-status ok";
       form.reset();
       form.querySelectorAll(".field").forEach((f) => f.classList.remove("valid", "invalid"));
@@ -254,6 +363,10 @@ function renderTitulosTable(tbody) {
       <td>${escapeHtml(t.tipoNivel)}</td>
       <td>${eg ? escapeHtml(eg.nombre) : "—"}</td>
       <td>${escapeHtml(t.fechaEmision || "—")}</td>
+      <td class="acciones">
+        <button type="button" class="btn btn-ghost btn-sm" data-editar="${encodeURIComponent(t.codigo)}">Editar</button>
+        <button type="button" class="btn btn-danger btn-sm" data-eliminar="${encodeURIComponent(t.codigo)}">Eliminar</button>
+      </td>
     </tr>`;
     })
     .join("");

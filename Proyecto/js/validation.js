@@ -12,7 +12,7 @@ const Patterns = {
   cedula: /^\d{1}-?\d{4}-?\d{4}$/,
 
   // Correo institucional o personal
-  correo: /^[\w.+-]+@[\w-]+\.[A-Za-z]{2,}$/,
+  correo: /^[\w.+-]+@[\w-]+(?:\.[\w-]+)*\.[A-Za-z]{2,}$/,
 
   // Teléfono costarricense: 8 dígitos, opcionalmente con +506 y espacio/guion
   telefono: /^(\+506\s?)?\d{4}-?\d{4}$/,

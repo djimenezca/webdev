@@ -368,3 +368,19 @@ dl.detail-list dd { margin: 0.2rem 0 0; font-size: 1rem; color: var(--paper); }
   position: absolute; width: 1px; height: 1px; overflow: hidden;
   clip: rect(0 0 0 0); white-space: nowrap;
 }
+
+/* Botón de acción destructiva (eliminar) y celda de acciones en tablas */
+.btn-danger {
+  background: #b3261e;
+  color: #fff;
+  border-color: #b3261e;
+}
+.btn-danger:hover {
+  background: #8f1c16;
+  border-color: #8f1c16;
+}
+.acciones {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
