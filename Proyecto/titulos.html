@@ -50,36 +50,51 @@
             <legend>Nuevo registro de título</legend>
             <div class="form-grid">
               <div class="field">
-                <label for="tit-codigo">Código de título</label>
-                <input type="text" id="tit-codigo" placeholder="LIC-2026" required>
-                <span class="hint">Formato: LIC-2026 o BSC-00458</span>
-                <span class="error-msg" role="alert"></span>
-              </div>
-              <div class="field full">
-                <label for="tit-nombre">Nombre del título</label>
-                <input type="text" id="tit-nombre" placeholder="Bachillerato en Ingeniería de Software" required>
-                <span class="hint">3 a 80 caracteres</span>
-                <span class="error-msg" role="alert"></span>
-              </div>
-              <div class="field">
-                <label for="tit-nivel">Nivel</label>
-                <select id="tit-nivel">
-                  <option value="Grado">Grado</option>
-                  <option value="Posgrado">Posgrado</option>
+                <label for="tit-tipoPrograma">Tipo de programa</label>
+                <select id="tit-tipoPrograma" required>
+                  <option value="Técnico">Técnico</option>
+                  <option value="Bachillerato">Bachillerato</option>
+                  <option value="Maestría">Maestría</option>
                 </select>
                 <span class="error-msg" role="alert"></span>
               </div>
               <div class="field">
-                <label for="tit-fecha">Fecha de emisión</label>
-                <input type="date" id="tit-fecha" required>
+                <label for="tit-anno">Año de graduación</label>
+                <input type="text" id="tit-anno" placeholder="2025" required>
+                <span class="hint">Entre 1980 y 2029</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="tit-carrera">Carrera</label>
+                <select id="tit-carrera" required>
+                  <option value="">Cargando carreras…</option>
+                </select>
+                <span class="hint">Debe existir previamente en la colección de carreras</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="tit-escuela">Escuela</label>
+                <select id="tit-escuela" required>
+                  <option value="">Cargando escuelas…</option>
+                </select>
+                <span class="hint">Debe existir previamente en la colección de escuelas</span>
                 <span class="error-msg" role="alert"></span>
               </div>
               <div class="field full">
                 <label for="tit-egresado">Egresado asociado</label>
                 <select id="tit-egresado" required>
-                  <option value="">Seleccione un egresado…</option>
+                  <option value="">Cargando egresados…</option>
                 </select>
                 <span class="hint">Debe existir un registro previo en Gestión de egresados</span>
+                <span class="error-msg" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="tit-estado">Estado</label>
+                <select id="tit-estado">
+                  <option value="Emitido">Emitido</option>
+                  <option value="Pendiente">Pendiente</option>
+                  <option value="Revocado">Revocado</option>
+                </select>
                 <span class="error-msg" role="alert"></span>
               </div>
             </div>
@@ -96,12 +111,12 @@
         <table>
           <thead>
             <tr>
-              <th scope="col">Código</th>
-              <th scope="col">Título</th>
-              <th scope="col">Nivel</th>
+              <th scope="col">Tipo de programa</th>
+              <th scope="col">Carrera</th>
+              <th scope="col">Escuela</th>
+              <th scope="col">Año</th>
               <th scope="col">Egresado</th>
-              <th scope="col">Fecha de emisión</th>
-              <th scope="col">Acciones</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
           <tbody id="tabla-titulos-body"></tbody>
@@ -120,6 +135,8 @@
 </footer>
 
 <script src="../Proyecto/js/validation.js"></script>
+<script src="../Proyecto/js/api.js"></script>
 <script src="../Proyecto/js/main.js"></script>
+<script src="../Proyecto/js/titulos.js"></script>
 </body>
 </html>
