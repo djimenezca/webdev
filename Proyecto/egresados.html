@@ -80,24 +80,10 @@
                 <span class="hint">Formato: 8888-1234</span>
                 <span class="error-msg" role="alert"></span>
               </div>
-              <div class="field">
-                <label for="eg-carrera">Carrera</label>
-                <input type="text" id="eg-carrera" placeholder="Ingeniería de Software" required>
-                <span class="hint">3 a 80 caracteres</span>
-                <span class="error-msg" role="alert"></span>
-              </div>
               <div class="field full">
-                <label for="eg-anio">Año de graduación</label>
-                <input type="text" id="eg-anio" placeholder="2023" required>
-                <span class="hint">Entre 1980 y 2029</span>
-                <span class="error-msg" role="alert"></span>
-              </div>
-              <div class="field">
-                <label for="eg-estado">Estado</label>
-                <select id="eg-estado">
-                  <option value="activo">Activo</option>
-                  <option value="inactivo">Inactivo</option>
-                </select>
+                <label for="eg-area">Área profesional (opcional)</label>
+                <input type="text" id="eg-area" placeholder="Tecnología">
+                <span class="hint">3 a 80 caracteres, si se indica</span>
                 <span class="error-msg" role="alert"></span>
               </div>
             </div>
@@ -115,11 +101,10 @@
         <table>
           <thead>
             <tr>
-              <th scope="col">Cédula</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Carrera</th>
-              <th scope="col">Año</th>
-              <th scope="col">Estado</th>
+              <th scope="col">Identificación</th>
+              <th scope="col">Nombre completo</th>
+              <th scope="col">Correo electrónico</th>
+              <th scope="col">Área profesional</th>
               <th scope="col">Perfil</th>
             </tr>
           </thead>
@@ -140,6 +125,8 @@
 </footer>
 
 <script src="../Proyecto/js/validation.js"></script>
+<script src="../Proyecto/js/api.js"></script>
 <script src="../Proyecto/js/main.js"></script>
+<script src="../Proyecto/js/egresados.js"></script>
 </body>
 </html>
